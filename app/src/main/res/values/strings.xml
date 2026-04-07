@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TrustLens</string>
+    <string name="please_wait_while_we_verify_trust">Please wait while we verify trust</string>
+</resources>
