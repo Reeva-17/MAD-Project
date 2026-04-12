@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="primary">#F26A30</color>
+
+    <color name="primary_foreground">#FFFFFF</color>
+
+    <color name="secondary">#B964C8</color>
+
+    <color name="secondary_foreground">#FFFFFF</color>
+
+    <color name="tertiary">#35B85A</color>
+
+    <color name="tertiary_foreground" >#FFFFFF</color>
+
+    <color name="warning">#FF9800</color>
+
+    <color name="warning_foreground">#FFFFFF</color>
+
+    <color name="background">#FAFAFA</color>
+
+    <color name="foreground">#2C3340</color>
+
+    <color name="card">#FFFFFF</color>
+
+    <color name="border">#E5E5E5</color>
+
+    <color name="muted">#F2F2F2</color>
+
+    <color name="muted_foreground">#6B6B6B</color>
+
+    <color name="hero_start">#F26A30</color>
+
+    <color name="hero_mid">#9B4FD8</color>
+
+    <color name="hero_erid">#E83EBF</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="white_20">#33FFFFFF</color>
+
+    <color name="white_40">#66FFFFFF</color>
+
+    <color name="white_80">#CCFFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="rank_silver">#D1D1D1</color>
+
+    <color name="rank_silver_text">#444444</color>
+
+    <color name="orange_50">#FFF3EC</color>
+
+    <color name="orange_100">#FFE2CC</color>
+
+    <color name="orange_200">#FFBA8F</color>
+
+    <color name="green_50">#EDFAF2</color>
+
+    <color name="green_100">#C8F0D6</color>
+
+    <color name="green_200">#72D699</color>
+    <color name="blue_50">#EFF6FF</color>
+
+    <color name="blue_100">#DBEAFE</color>
+
+    <color name="blue_200">#93C5FD</color>
+
+    <color name="blue_600">#2563EB</color>
+
+
+    <dimen name="spacing_xs">4dp</dimen>
+
+    <dimen name="spacing_sm">8dp</dimen>
+
+    <dimen name="spacing_md">12dp</dimen>
+
+    <dimen name="spacing_base">16dp</dimen>
+
+    <dimen name="spacing_lg">20dp</dimen>
+
+    <dimen name="spacing_xl">24dp</dimen>
+
+    <dimen name="spacing_2x1">32dp</dimen>
+
+    <dimen name="spacing_3x1">48dp</dimen>
+
+    <dimen name="radius_sm">8dp</dimen>
+
+    <dimen name="radius_md">12dp</dimen>
+
+    <dimen name="radius_lg">16dp</dimen>
+
+    <dimen name="radius_xl">24dp</dimen>
+
+    <dimen name="text_h1">39sp</dimen>
+
+    <dimen name="text_h2">28sp</dimen>
+
+    <dimen name="text_h3">20sp</dimen>
+
+    <dimen name="text_body">16sp</dimen>
+
+    <dimen name="text_small">13sp</dimen>
+
+    <dimen name="text_label">12sp</dimen>
+
+    <dimen name="icon_btn_size">40dp</dimen>
+
+    <dimen name="metric_icon_size">32dp</dimen>
+
+    <dimen name="store_icon_container">56dp</dimen>
+
+    <dimen name="product_thumb_size">48dp</dimen>
+
+    <dimen name="rank_badge_size">36dp</dimen>
+
+    <dimen name="insight_icon_container">40dp</dimen>
+
+    <dimen name="progress_bar_height">8dp</dimen>
+
+    <dimen name="elevation_card">2dp</dimen>
+
+    <dimen name="header_min_height">64dp</dimen>
+    Videonly
+
+    <string name="app_name">TrustCheck</string>
+
+    <string name="seller_dashboard">Seller Dashboard</string>
+
+<string name="instagram_business_trust_checker">Instagram Business Trust Checker</string>
+
+<string name="store_name">Fashion Store</string>
+
+<string name="store_handle">/@fashion_store</string>
+
+<string name="view_store">View Store</string>
+
+<string name="total_products">Total Products</string>
+
+<string name="avg_trust_score">Avg Trust Score</string>
+
+<string name="reviews_count">Reviews Count</string>
+
+<string name="risk_alerts">Risk Alerts</string>
+
+<string name="performance_metrics">Performance Metrics</string>
+
+<string name="response_rate">Response Rate</string>
+
+<string name="customer_satisfaction">Customer Satisfaction</string>
+
+<string name="delivery_time">Delivery Time</string>
+
+<string name="product_quality">Product Quality</string>
+
+<string name="insights_title">Insights &amp; Recommendations</string>
+
+<string name="low_engagement_title">Low Engagement Alert</string>
+
+<string name="low_engagement_desc">Your last 5 posts have below-average engagement. Consider updating your content strategy.</string>
+
+<string name= "low_engagement_action">Improve product descriptions</string>
+
+<string name="trust_increase_title">Trust Score Increase</string>
+
+<string name="trust_increase_desc">Your trust score improved by 4 points this week. Keep responding to reviews promptly.</string>
+
+<string name="trust_increase_action">View trust breakdown</string>
+
+<string name="return_policy_title">Add Return Policy</string>
+
+<string name="return_policy_desc">Stores with a clear return policy see 23% higher buyer confidence scores.</string>
+
+<string name="return_policy_action">Set up return policy</string>
+
+<string name="top_products">Top. Products</string>
+
+<string name="product_1">Summer Floral Dress</string>
+
+<string name="product_2">Classic Denim Jacket</string>
+
+<string name="product_3">Boho Maxi Skirt</string>
+
+<string name="powered_by">Powered by </string>
+
+<string name="trustcheck">TrustCheck</string>
+
+<string name="perf_value_format">X15dXX/X25XX</string>
+
+<string name="cd_go_hack">Go back</string>
+
+<string name="cd_settings">Open settings</string>
+    <string name="cd_store_icon">Store icon</string>
+
+
+    <style name="Theme.TrustCheck" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+    <item name="colorPrimary">@color/primary</item>
+
+    <item name="colorPrimaryVariant">@color/hero_mid</item>
+
+    <item name="colorOnPrimary">@color/white</item>
+
+    <item name="colorSecondary">@color/secondary</item>
+
+    <item name="android:windowBackground">@color/background</item>
+
+</style>
+
+<style name="TextAppearance.TrustCheck.HeaderTitle">
+
+<item name="android:textSize">@dimen/text_body</item>
+
+<item name="android:textColor">@color/white</item>
+
+<item name="android:textStyle">bold</item>
+
+    </style>
+
+<style name="TextAppearance.TrustCheck.SectionTitle">
+
+<item name="android:textSize">@dimen/text_h3</item>
+
+<item name="android:textColor">@color/foreground</item>
+
+<item name="android:textStyle">bold</item>
+
+    </style>
+
+<style name="TextAppearance.TrustCheck.MetricValue">
+
+<item name="android:textSize">@dimen/text_h2</item>
+
+<item name="android:textColor">@color/foreground</item>
+
+<item name="android:textStyle">bold</item>
+
+    </style>
+
+<style name="Widget.TrustCheck.Card">
+
+<item name="cardBackgroundColor">@color/card</item>
+
+<item name="cardCornerRadius">@dimen/radius_lg</item>
+
+<item name="cardElevation">@dimen/elevation_card</item>
+
+<item name="strokeColor">@color/border</item>
+</style>
+</resources>

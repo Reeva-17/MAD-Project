@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Response Rate"
+        android:textSize="14sp"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="90"
+        android:max="100"
+        android:progressTint="#00C853"/>
+</LinearLayout>

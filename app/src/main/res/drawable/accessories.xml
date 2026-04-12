@@ -1,0 +1,7 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <!-- Necklace-like shape -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M12,4a8,8 0 1,0 0,16a8,8 0 0,0 0,-16zm0,4a4,4 0 1,1 0,8a4,4 0 0,1 0,-8z" />
+</vector>

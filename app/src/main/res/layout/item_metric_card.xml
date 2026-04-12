@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="@dimen/spacing_base"
+    android:elevation="@dimen/elevation_card">
+
+    <FrameLayout
+        android:id="@+id/fl_icon_bg"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_metric_icon_primary">
+
+        <ImageView
+            android:id="@+id/iv_metric_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_metric_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="156"
+        android:textSize="@dimen/text_h2"
+        android:textColor="@color/foreground"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/spacing_sm"/>
+
+    <TextView
+        android:id="@+id/tv_metric_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Products"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/muted_foreground"
+        android:layout_marginTop="@dimen/spacing_xs"/>
+</LinearLayout>
+
+
+

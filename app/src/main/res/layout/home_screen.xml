@@ -1,133 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
+    <!-- Top bar -->
+
+    <!-- Search Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-        <Button
-            android:id="@+id/analyzeButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Analyze Product"
-            android:layout_marginTop="20dp"/>
+        android:layout_height="150dp"
+        android:background="@drawable/setting_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        <!-- App Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="TrustLens"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#FF4081" />
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold" />
 
-        <!-- Subtitle -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stay safe from scams"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp" />
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profile_icon"
+            android:background="@android:color/transparent"
+            android:contentDescription="Profile"
+            app:tint="#FFFFFF" />
 
-        <!-- Search Bar -->
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search Instagram business or product..."
-            android:layout_marginTop="16dp"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text" />
 
-        <!-- Info Card -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stay safe from scams (AI-powered)"
-            android:background="#E0E0E0"
-            android:padding="12dp"
-            android:layout_marginTop="16dp" />
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/settings_logo"
+            android:background="@android:color/transparent"
+            android:contentDescription="Settings"
+            app:tint="#FFFFFF" />
 
-        <!-- Recent Searches -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recent Searches"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\@fashion_store ✔"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\@beauty_essentials" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\@tech_deals ✔" />
-
-        <!-- Products Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recommended Products"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp" />
-
-        <!-- Product 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#F5F5F5"
-            android:padding="12dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Premium Jacket"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$89" />
-        </LinearLayout>
-
-        <!-- Product 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#F5F5F5"
-            android:padding="12dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Skincare Set"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$45" />
-        </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Instagram business or product..."
+        android:padding="12dp"
+        android:background="@drawable/card_bg"
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:layout_margin="8dp" />
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Categories -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                android:padding="8dp" />
+
+            <!-- Recommended Products -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/catWomen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Women Clothes"
+                        android:background="@drawable/card_bg"/>
+
+                    <Button
+                        android:id="@+id/catMen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Men Clothes"
+                        android:background="@drawable/card_bg"/>
+
+                    <Button
+                        android:id="@+id/catKids"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Kids Clothes"
+                        android:background="@drawable/card_bg"/>
+
+                    <Button
+                        android:id="@+id/catAccessories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Accessories"
+                        android:background="@drawable/card_bg"/>
+
+                    <Button
+                        android:id="@+id/catCrochet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Crochet"
+                        android:background="@drawable/card_bg"/>
+
+                    <Button
+                        android:id="@+id/catDecor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Decor Items"
+                        android:background="@drawable/card_bg"/>
+
+
+                        />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recommended Products"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true"
+                android:padding="8dp">
+
+                <!-- 8 Product Buttons -->
+                <Button android:id="@+id/product1"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Premium Jacket\n$600"
+                    android:drawableTop="@drawable/product_jacket"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product2"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Skincare Set\n$2500"
+                    android:drawableTop="@drawable/skincare"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product3"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Running Shoes\n1500"
+                    android:drawableTop="@drawable/shoes"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product4"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Smart Watch\n2500"
+                    android:drawableTop="@drawable/watch"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product5"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Wireless Earbuds\n1200"
+                    android:drawableTop="@drawable/earbuds"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product6"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Crochet Flowers\n1000"
+                    android:drawableTop="@drawable/crochet_flowers"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product7"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Accessory\n250"
+                    android:drawableTop="@drawable/accessories"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/product8"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Designer Bag\n600"
+                    android:drawableTop="@drawable/bag"
+                    android:gravity="center"
+                    android:background="@drawable/card_bg"
+                    android:textColor="#000000" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

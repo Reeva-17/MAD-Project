@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Gradient Header -->
+
+    <!-- Preferences Section -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:background="@drawable/setting_gradient"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back"
+            android:contentDescription="Back"
+            app:tint="#FFFFFF"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Settings"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preferences"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textColor="#000000" />
+
+    <Switch
+        android:id="@+id/darkModeSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dark Mode"
+        android:padding="16dp" />
+
+    <Switch
+        android:id="@+id/riskAlertsSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Risk Alerts Notifications"
+        android:checked="true"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/privacyControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Privacy Controls"
+        android:drawableStart="@drawable/privacy"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:textColor="#000000" />
+
+    <!-- Support Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/helpFaq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help &amp; FAQ"
+        android:drawableStart="@drawable/help_faq"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/sendFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Feedback"
+        android:drawableStart="@drawable/feedback"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:textColor="#000000" />
+
+    <!-- Account Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:drawableStart="@drawable/logout"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:textColor="#000000" />
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TrustLens v1.0.0 © 2026 TrustLens. All rights reserved."
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:padding="8dp" />
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_card"
+    android:padding="@dimen/spacing_base"
+    android:gravity="center_vertical"
+    android:elevation="@dimen/elevation_card">
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="@dimen/rank_badge_size"
+        android:layout_height="@dimen/rank_badge_size"
+        android:gravity="center"
+        android:background="@drawable/bg_rank_gold"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:textSize="@dimen/text_body"/>
+
+    <ImageView
+        android:id="@+id/iv_product_thumb"
+        android:layout_width="@dimen/product_thumb_size"
+        android:layout_height="@dimen/product_thumb_size"
+        android:layout_marginStart="@dimen/spacing_base"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:background="@drawable/bg_card"
+        android:importantForAccessibility="no"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/spacing_base">
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/text_body"
+            android:textColor="@color/foreground"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_product_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/muted_foreground"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_star"
+            android:importantForAccessibility="no"/>
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/foreground"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+</LinearLayout>

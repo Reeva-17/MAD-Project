@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Shield base -->
+    <path
+        android:fillColor="#FF6A00"
+        android:pathData="M48,4L84,20v28c0,24 -16,44 -36,48 -20,-4 -36,-24 -36,-48V20L48,4z" />
+
+    <!-- Shield gradient overlay -->
+    <path
+        android:fillColor="#FF3D7F"
+        android:fillAlpha="0.6"
+        android:pathData="M48,4L84,20v28c0,24 -16,44 -36,48V4z" />
+
+    <!-- Magnifying glass lens -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,32a16,16 0 1,0 0,32 16,16 0 0,0 0,-32zM40,36a12,12 0 1,1 0,24 12,12 0 0,1 0,-24z" />
+
+    <!-- Magnifying glass handle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,52l14,14 -4,4 -14,-14z" />
+
+    <!-- Lens highlight -->
+    <path
+        android:fillColor="#80D8FF"
+        android:pathData="M40,36a12,12 0 0,1 12,12h-12z" />
+</vector>

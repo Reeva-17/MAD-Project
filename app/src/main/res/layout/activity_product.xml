@@ -1,0 +1,106 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Gradient Toolbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_gradient"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:text="Premium Wireless Headphones"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Product Image -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@layout/sample_product"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Seller Info -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="495dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <TextView
+                android:id="@+id/sellerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/@tech_deals"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/viewSellerBtn"
+                android:layout_width="316dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_gradient"
+                android:text="View Seller Profile"
+                android:textColor="@android:color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Trust Score -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:layout_marginTop="8dp"
+            android:padding="12dp">
+
+            <TextView
+                android:text="Trust Score: 88"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Ratings & AI Analysis -->
+        <include layout="@layout/item_ratings"/>
+
+        <!-- Feedback Panel -->
+        <include layout="@layout/item_feedback"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="✓ This product appears safe based on AI analysis" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+

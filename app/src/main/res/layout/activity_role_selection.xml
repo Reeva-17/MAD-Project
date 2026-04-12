@@ -1,108 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bg_gradient"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
 
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/trustlens_logo"
+        android:contentDescription="TrustLens Logo"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TrustLens"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instagram Trust Checker"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Continue as -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue as"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp" />
+
+    <!-- User Option Card -->
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:padding="24dp"
-        android:gravity="center"
+        android:id="@+id/userOption"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/card_bg_rolesel"
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical">
 
-        <!-- Logo -->
         <ImageView
-            android:src="@android:drawable/ic_menu_search"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@android:color/white"
-            android:padding="18dp" />
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/user"
+            android:contentDescription="User Icon"
+            android:layout_marginEnd="12dp" />
 
-        <TextView
-            android:text="TrustLens"
-            android:textSize="24sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="Continue as"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!-- USER CARD -->
         <LinearLayout
-            android:id="@+id/userCard"
-            android:orientation="horizontal"
-            android:background="@drawable/card_bg"
-            android:padding="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView5
-                android:src="@android:drawable/ic_menu_myplaces"
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginStart="10dp"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="User"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
 
-                <TextView
-                    android:text="User"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="Check products &amp; sellers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- SELLER CARD -->
-        <LinearLayout
-            android:id="@+id/sellerCard"
-            android:orientation="horizontal"
-            android:background="@drawable/card_bg"
-            android:padding="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:src="@android:drawable/ic_menu_agenda"
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginStart="10dp"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Seller"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="Manage your business trust"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="Check products &amp; sellers"
+                android:textSize="14sp"
+                android:textColor="#666666" />
         </LinearLayout>
-
     </LinearLayout>
-</RelativeLayout>
+
+    <!-- Seller Option Card -->
+    <LinearLayout
+        android:id="@+id/sellerOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/card_bg_rolesel"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/sellerOption"
+            android:contentDescription="Seller Icon"
+            android:layout_marginEnd="12dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seller"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage your business trust"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔒 Protecting you from scams with AI"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>
