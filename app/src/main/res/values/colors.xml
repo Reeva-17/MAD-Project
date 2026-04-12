@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <resources>
     <color name="orange">#FF7E5F</color>
     <color name="pink">#FD3A69</color>
@@ -24,3 +25,10 @@
 
 
 </resources>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
+>>>>>>> 93ce4a9f96e3ce03963d9c7897397882f106caa0
