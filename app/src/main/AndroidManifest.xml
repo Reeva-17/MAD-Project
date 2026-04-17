@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    package="com.example.trustlens">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    package com.example.trustlens
 
     <application
         android:allowBackup="true"
@@ -31,7 +31,7 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".AnalyzeActivity" />
 
-=======
+
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
@@ -52,7 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
->>>>>>> 93ce4a9f96e3ce03963d9c7897397882f106caa0
+
     </application>
 
 </manifest>

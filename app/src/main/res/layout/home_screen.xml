@@ -14,7 +14,21 @@
         android:background="@drawable/setting_gradient"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="10dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:contentDescription="Profile"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_profile_foreground"
+            app:shapeAppearanceOverlay="@style/CircleImageStyle" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,39 +40,104 @@
             android:gravity="center_horizontal"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/profileButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/profile_icon"
-            android:background="@android:color/transparent"
-            android:contentDescription="Profile"
-            app:tint="#FFFFFF" />
-
 
         <ImageButton
             android:id="@+id/btnSettings"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/settings_logo"
+            android:layout_width="72dp"
+            android:layout_height="78dp"
+            android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:contentDescription="Settings"
+            android:src="@drawable/settings_logo"
             app:tint="#FFFFFF" />
+
 
 
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/searchBar"
+    <!-- Search Card -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search Instagram business or product..."
+        android:orientation="horizontal"
+        android:background="@drawable/search_bg"
         android:padding="12dp"
-        android:background="@drawable/card_bg"
-        android:textColor="#000000"
-        android:textColorHint="#666666"
-        android:layout_margin="8dp" />
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:elevation="7dp">
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search Icon"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- Search Text Field -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search Instagram business or product..."
+            android:background="@android:color/transparent"
+            android:padding="12dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- Scam Protection Card -->
+    <LinearLayout
+        android:id="@+id/scamCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_card"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Placeholder for Green Image -->
+        <ImageView
+            android:id="@+id/scamIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/ic_shield_round"
+            android:contentDescription="Scam Protection Icon"
+            app:tint="#4CAF50"
+        android:layout_marginEnd="12dp"/>
+
+        <!-- Text Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title in Black -->
+            <TextView
+                android:id="@+id/scamTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stay safe from scams"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+
+            <!-- Subtitle in Grey -->
+            <TextView
+                android:id="@+id/scamSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI powered protection"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
 
     <!-- Scrollable content -->
     <ScrollView
@@ -95,43 +174,49 @@
                         android:id="@+id/catWomen"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
-                        android:text="Women Clothes"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"
+                        android:text="Women Clothes" />
 
                     <Button
                         android:id="@+id/catMen"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
-                        android:text="Men Clothes"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"
+                        android:text="Men Clothes" />
 
                     <Button
                         android:id="@+id/catKids"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Kids Clothes"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"/>
 
                     <Button
                         android:id="@+id/catAccessories"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Accessories"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"/>
 
                     <Button
                         android:id="@+id/catCrochet"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Crochet"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"/>
 
                     <Button
                         android:id="@+id/catDecor"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Decor Items"
-                        android:background="@drawable/card_bg"/>
+                        android:background="@drawable/card_bg"
+                        android:elevation="4dp"/>
 
 
                         />
@@ -146,86 +231,531 @@
                 android:textStyle="bold"
                 android:padding="8dp" />
 
-            <GridLayout
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:useDefaultMargins="true"
+                android:orientation="horizontal"
                 android:padding="8dp">
 
-                <!-- 8 Product Buttons -->
-                <Button android:id="@+id/product1"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Premium Jacket\n$600"
-                    android:drawableTop="@drawable/product_jacket"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                <!-- Product Card 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                <Button android:id="@+id/product2"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Skincare Set\n$2500"
-                    android:drawableTop="@drawable/skincare"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                    <!-- Product Image -->
+                    <ImageView
+                        android:id="@+id/productImage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_jacket_foreground"
+                        android:scaleType="centerCrop"/>
 
-                <Button android:id="@+id/product3"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Running Shoes\n1500"
-                    android:drawableTop="@drawable/shoes"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/productName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Premium Jacket"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:layout_marginTop="6dp"/>
 
-                <Button android:id="@+id/product4"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Smart Watch\n2500"
-                    android:drawableTop="@drawable/watch"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                    <!-- Seller Name -->
+                    <TextView
+                        android:id="@+id/productSeller1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@fashion_store"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
 
-                <Button android:id="@+id/product5"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Wireless Earbuds\n1200"
-                    android:drawableTop="@drawable/earbuds"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                    <!-- Price + Rating -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
 
-                <Button android:id="@+id/product6"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Crochet Flowers\n1000"
-                    android:drawableTop="@drawable/crochet_flowers"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                        android:layout_marginTop="6dp">
 
-                <Button android:id="@+id/product7"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Accessory\n250"
-                    android:drawableTop="@drawable/accessories"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="700/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
 
-                <Button android:id="@+id/product8"
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:text="Designer Bag\n600"
-                    android:drawableTop="@drawable/bag"
-                    android:gravity="center"
-                    android:background="@drawable/card_bg"
-                    android:textColor="#000000" />
-            </GridLayout>
+                        <TextView
+                            android:id="@+id/productRating1"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+
+                            android:gravity="center"
+                            android:text="92"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Product Card 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <!-- Product Image -->
+                    <ImageView
+                        android:id="@+id/productImage2"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_skincare_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:id="@+id/productName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Skincare Set"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <!-- Seller Name -->
+                    <TextView
+                        android:id="@+id/productSeller2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@beauty_essentials"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <!-- Price + Rating -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1000/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:id="@+id/productRating2"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="78"
+                            android:textColor="#FFFFFF"
+                            android:background="#FF9800"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <!-- Product Card 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp">
+
+                    <!-- Product Image -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_shoes_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Running Shoes"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <!-- Seller Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@sneaker_hub"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <!-- Price + Rating Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <!-- Price on Left -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="800/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <!-- Rating on Right -->
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="85"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Product Card 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <!-- Product Image -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_watch_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <!-- Product Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart Watch"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <!-- Seller Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@tech_deals"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <!-- Price + Rating Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <!-- Price on Left -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1500/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <!-- Rating on Right -->
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="96"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <!-- Product Card 5 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_shirt_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Casual Shirt"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@fashion_store"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="435/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="80"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Product Card 6 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_perfume_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perfume"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@beauty_essentials"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="234/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="72"
+                            android:textColor="#FFFFFF"
+                            android:background="#F44336"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <!-- Product Card 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_headphones_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Headphones"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@tech_deals"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2530/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="90"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Product Card 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_sneakers_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sneakers"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@sneaker_hub"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="950/-"
+                            android:textSize="13sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="84"
+                            android:textColor="#FFFFFF"
+                            android:background="#4CAF50"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

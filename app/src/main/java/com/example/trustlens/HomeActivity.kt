@@ -1,45 +1,95 @@
+package com.example.trustlens
+
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.example.trustlens.R
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var role: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
 
-        // Example setup for each product
-        setupProduct(R.id.product1, "Premium Jacket", "$89", "https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Mens-Jackets-Field-DarkOlive-022723-1_1200x1200_crop_center.jpg?v=1678403998")
-        setupProduct(R.id.product2, "Skincare Set", "$45", "https://tse4.mm.bing.net/th/id/OIP.t0-C4ZWQ8aHSO8gR4efQNAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3")
-        setupProduct(R.id.product3, "Running Shoes", "$120", "https://tse1.mm.bing.net/th/id/OIP.qN2mSyAOWx-M-Pi3btcRLwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3")
-        setupProduct(R.id.product4, "Smart Watch", "$199", "https://i.pinimg.com/originals/ec/83/14/ec83145564601ba3ce94fa635bbc0c24.png")
-        setupProduct(R.id.product5, "Wireless Earbuds", "$59", "https://aromatherapynaturals.com/wp-content/uploads/2025/01/top_wireless_earbuds_2025.jpg")
-        setupProduct(R.id.product6, "Crochet Flowers", "$35", "https://crochet-patterns-free.com/wp-content/uploads/2024/04/free20crochet20tulip20pattern-20EASY20crochet20flower20pattern2020-6506270-scaled.jpeg")
-        setupProduct(R.id.product7, "Hair Accessory", "$75", "data:image/webp;base64,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")
-        setupProduct(R.id.product8, "Designer Bag", "$150", "https://image.made-in-china.com/2f0j00pNocAneFQGbI/Basic-PU-Leather-Lady-Fashion-Designer-Luxury-Tote-Handbag-Women-Bag.jpg")
-    }
+        // Get role passed from LoginActivity or SignupActivity
+        role = intent.getStringExtra("ROLE") ?: "USER"
 
-    private fun setupProduct(productId: Int, name: String, price: String, imageUrl: String) {
-        val productView = findViewById<LinearLayout>(productId)
-        val image = productView.findViewById<ImageView>(R.id.productImage)
-        val nameView = productView.findViewById<TextView>(R.id.productName)
-        val priceView = productView.findViewById<TextView>(R.id.productPrice)
+        // Profile icon → UserDashboard or SellerDashboard
+        val profileIcon = findViewById<ImageView>(R.id.profileButton)
+        profileIcon.setOnClickListener {
+            if (role == "USER") {
+                startActivity(Intent(this, UserDashboardActivity::class.java))
+            } else {
+                startActivity(Intent(this, SellerDashboardActivity::class.java))
+            }
+        }
 
-        nameView.text = name
-        priceView.text = price
+        // Settings icon → SettingsActivity
+        val settingsIcon = findViewById<ImageView>(R.id.btnSettings)
+        settingsIcon.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
 
-        Glide.with(this)
-            .load(https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Mens-Jackets-Field-DarkOlive-022723-1_1200x1200_crop_center.jpg?v=1678403998) // <-- Replace with actual URL
-            .placeholder(R.drawable.ic_placeholder)
-            .into(image)
+        // Category clicks → CategoryActivity (reuse one activity, pass category name)
+        val womenCategory = findViewById<TextView>(R.id.catWomen)
+        womenCategory.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putExtra("CATEGORY", "WOMEN")
+            startActivity(intent)
+        }
 
-        productView.setOnClickListener {
-            Toast.makeText(this, "Opening: $name", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to product detail screen
+        val menCategory = findViewById<TextView>(R.id.catMen)
+        menCategory.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putExtra("CATEGORY", "MEN")
+            startActivity(intent)
+        }
+
+        val kidsCategory = findViewById<TextView>(R.id.catKids)
+        kidsCategory.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putExtra("CATEGORY", "KIDS")
+            startActivity(intent)
+        }
+
+        // Example product clicks → ProductDetailActivity (reuse one product screen)
+        val product1 = findViewById<TextView>(R.id.productName1)
+        product1.setOnClickListener {
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT_NAME", "Premium Jacket")
+            intent.putExtra("PRODUCT_PRICE", "700/-")
+            intent.putExtra("PRODUCT_SELLER", "@fashion_store")
+            startActivity(intent)
+        }
+
+        val product2 = findViewById<TextView>(R.id.productName2)
+        product2.setOnClickListener {
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT_NAME", "Skincare Set")
+            intent.putExtra("PRODUCT_PRICE", "1000/-")
+            intent.putExtra("PRODUCT_SELLER", "@beauty_essentials")
+            startActivity(intent)
+        }
+
+        val product3 = findViewById<TextView>(R.id.productna3)
+        product3.setOnClickListener {
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT_NAME", "Running Shoes")
+            intent.putExtra("PRODUCT_PRICE", "800/-")
+            intent.putExtra("PRODUCT_SELLER", "@sneeker_hub")
+            startActivity(intent)
+        }
+
+        val product4 = findViewById<TextView>(R.id.product4)
+        product4.setOnClickListener {
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT_NAME", "Smart Watch")
+            intent.putExtra("PRODUCT_PRICE", "900/-")
+            intent.putExtra("PRODUCT_SELLER", "@tech_deals")
+            startActivity(intent)
         }
     }
 }

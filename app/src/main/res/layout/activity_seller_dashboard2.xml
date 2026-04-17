@@ -39,10 +39,11 @@
                         android:id="@+id/backButton"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@android:color/transparent"
+                        android:background="@color/transparent"
                         android:src="@drawable/back"
-                        android:contentDescription="Back"
-                        app:tint="#FFFFFF"/>
+                        android:contentDescription="back"
+                        app:tint="@color/white"
+                       />
 
                     <!-- Dashboard Title (center, expands with weight) -->
                     <TextView
@@ -64,7 +65,7 @@
                         android:src="@drawable/settings_logo"
                         android:background="@android:color/transparent"
                         android:contentDescription="Settings"
-                        android:tint="@color/white"/>
+                        app:tint="@color/white"/>
                 </LinearLayout>
                 <!-- Store DP + Name side by side -->
                 <LinearLayout
@@ -78,10 +79,11 @@
                     <!-- Profile Image -->
                     <ImageView
                         android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="image"
+                        android:src="@mipmap/ic_launcher_foreground"
+                        android:visibility="visible"/>
 
                     <!-- Store Name -->
 
@@ -124,7 +126,8 @@
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/bg_card_products"
-                    android:layout_margin="@dimen/spacing_sm">
+                    android:layout_margin="@dimen/spacing_sm"
+                    android:elevation="4dp">
 
                     <ImageView
                         android:layout_width="36dp"
@@ -156,8 +159,9 @@
                     android:layout_columnWeight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/bg_card_trust"
-                    android:layout_margin="@dimen/spacing_sm">
+                    android:background="@drawable/bg_insight_success"
+                    android:layout_margin="@dimen/spacing_sm"
+                    android:elevation="4dp">
 
                     <ImageView
                         android:layout_width="36dp"
@@ -189,8 +193,9 @@
                     android:layout_columnWeight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/bg_card_reviews"
-                    android:layout_margin="@dimen/spacing_sm">
+                    android:background="@drawable/bg_info"
+                    android:layout_margin="@dimen/spacing_sm"
+                    android:elevation="4dp">
 
                     <ImageView
                         android:layout_width="36dp"
@@ -222,8 +227,9 @@
                     android:layout_columnWeight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/bg_card_alerts"
-                    android:layout_margin="@dimen/spacing_sm">
+                    android:background="@drawable/bg_insight_warning"
+                    android:layout_margin="@dimen/spacing_sm"
+                    android:elevation="4dp">
 
                     <ImageView
                         android:layout_width="36dp"
@@ -260,7 +266,8 @@
                 android:background="@drawable/bg_gradient"
                 android:layout_margin="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:elevation="4dp">
 
                 <!-- Logo -->
                 <ImageView
@@ -290,21 +297,26 @@
 
 
             <!-- Performance Metrics -->
+
+
+            <!-- Insights -->
+            <!-- Insights & Recommendations -->
             <LinearLayout
                 android:id="@+id/layout_performance_metrics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_metric_card"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:background="@drawable/bg_metric_card">
+                android:padding="16dp">
 
                 <!-- Header Row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
+                    android:orientation="horizontal"
+                    android:elevation="10dp">
 
                     <!-- Logo -->
 
@@ -314,8 +326,8 @@
                         android:id="@+id/imageView11"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:scaleType="centerInside"
                         android:layout_marginEnd="8dp"
+                        android:scaleType="centerInside"
                         app:srcCompat="@mipmap/ic_launcher2_foreground" />
 
                     <TextView
@@ -323,9 +335,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Performance Metrics"
+                        android:textColor="@android:color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <!-- Metric Row Template -->
@@ -335,8 +347,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="4dp">
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal">
 
                     <!-- Left side label -->
                     <TextView
@@ -346,7 +358,7 @@
                         android:layout_weight="1"
                         android:text="Response Rate"
                         android:textColor="@android:color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                     <!-- Right side percentage -->
                     <TextView
@@ -356,17 +368,17 @@
                         android:text="92%"
                         android:textColor="@android:color/black"
                         android:textSize="14sp"
-                        android:textStyle="bold"/>
-
-                    <!-- Right side /100 -->
+                        android:textStyle="bold" />
                     <TextView
                         android:id="@+id/tv_response_rate_outof"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
                         android:text="/ 100"
                         android:textColor="#9E9E9E"
-                        android:textSize="14sp"
-                        android:layout_marginStart="4dp"/>
+                        android:textSize="14sp" />
+
+                    <!-- Right side /100 -->
                 </LinearLayout>
 
                 <!-- Progress Bar -->
@@ -375,10 +387,10 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:progress="92"
+                    android:backgroundTint="@color/white_20"
                     android:max="100"
-                    android:progressTint="@color/green"
-                    android:backgroundTint="@color/white_20"/>
+                    android:progress="92"
+                    android:progressTint="@color/green" />
 
 
                 <!-- Customer Satisfaction -->
@@ -386,9 +398,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp">
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal">
 
                     <!-- Left side label -->
                     <TextView
@@ -398,7 +410,7 @@
                         android:layout_weight="1"
                         android:text="Customer Satisfaction"
                         android:textColor="@android:color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                     <!-- Right side percentage group -->
                     <LinearLayout
@@ -413,16 +425,16 @@
                             android:text="88%"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_customer_satisfaction_outof"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
                             android:text="/ 100"
                             android:textColor="#9E9E9E"
-                            android:textSize="14sp"
-                            android:layout_marginStart="4dp"/>
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -432,11 +444,11 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:progress="88"
-                    android:max="100"
                     android:indeterminate="false"
-                    android:progressTint="@color/blue"
-                    android:progressBackgroundTint="#E0E0E0"/>
+                    android:max="100"
+                    android:progress="88"
+                    android:progressBackgroundTint="#E0E0E0"
+                    android:progressTint="@color/blue" />
 
 
                 <!-- Delivery Time -->
@@ -444,9 +456,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp">
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal">
 
                     <!-- Left side label -->
                     <TextView
@@ -456,7 +468,7 @@
                         android:layout_weight="1"
                         android:text="Delivery Time"
                         android:textColor="@android:color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                     <!-- Right side percentage group -->
                     <LinearLayout
@@ -471,16 +483,18 @@
                             android:text="85%"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_delivery_time_outof"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
                             android:text="/ 100"
                             android:textColor="#9E9E9E"
-                            android:textSize="14sp"
-                            android:layout_marginStart="4dp"/>
+                            android:textSize="14sp" />
+
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -490,11 +504,11 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:progress="85"
-                    android:max="100"
                     android:indeterminate="false"
-                    android:progressTint="@color/orange"
-                    android:progressBackgroundTint="#E0E0E0"/>
+                    android:max="100"
+                    android:progress="85"
+                    android:progressBackgroundTint="#E0E0E0"
+                    android:progressTint="@color/orange" />
 
 
                 <!-- Product Quality -->
@@ -502,9 +516,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp">
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal">
 
                     <!-- Left side label -->
                     <TextView
@@ -514,7 +528,7 @@
                         android:layout_weight="1"
                         android:text="Product Quality"
                         android:textColor="@android:color/black"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                     <!-- Right side percentage group -->
                     <LinearLayout
@@ -529,16 +543,16 @@
                             android:text="91%"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_product_quality_outof"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
                             android:text="/ 100"
                             android:textColor="#9E9E9E"
-                            android:textSize="14sp"
-                            android:layout_marginStart="4dp"/>
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -548,18 +562,14 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:progress="91"
-                    android:max="100"
                     android:indeterminate="false"
-                    android:progressTint="@color/purple"
-                    android:progressBackgroundTint="#E0E0E0"/>
+                    android:max="100"
+                    android:progress="91"
+                    android:progressBackgroundTint="#E0E0E0"
+                    android:progressTint="@color/purple" />
 
             </LinearLayout>
 
-
-
-            <!-- Insights -->
-            <!-- Insights & Recommendations -->
             <LinearLayout
                 android:id="@+id/layout_insights"
                 android:layout_width="match_parent"
@@ -681,7 +691,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                android:elevation="4dp">
 
                 <!-- Heading -->
                 <LinearLayout
@@ -715,7 +726,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    android:elevation="5dp">
 
                     <!-- Product Image -->
                     <ImageView

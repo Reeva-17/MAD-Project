@@ -123,11 +123,12 @@
         android:layout_height="wrap_content"
         android:text="Logout"
         android:drawableStart="@drawable/logout"
+
         android:drawablePadding="12dp"
         android:gravity="start|center_vertical"
         android:padding="16dp"
         android:background="@android:color/transparent"
-        android:textColor="#000000" />
+        android:textColor="@color/red" />
 
     <!-- Footer -->
     <TextView
