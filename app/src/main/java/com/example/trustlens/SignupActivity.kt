@@ -21,7 +21,7 @@ class SignupActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.emailInput)
         val etPassword = findViewById<EditText>(R.id.passwordInput)
         val etConfirmPassword = findViewById<EditText>(R.id.confirmPasswordInput)
-        val btnSignupConfirm = findViewById<Button>(R.id.signupTab)
+        val btnSignupConfirm = findViewById<Button>(R.id.signUpButton)
 
         btnSignupConfirm.setOnClickListener {
             val email = etEmail.text.toString().trim()

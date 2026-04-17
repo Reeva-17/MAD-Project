@@ -8,49 +8,42 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class AnalyzeActivity : AppCompatActivity() {
-
-    private lateinit var progressBar: ProgressBar
-    private lateinit var progressText: TextView
-
-    private lateinit var step1: TextView
-    private lateinit var step2: TextView
-    private lateinit var step3: TextView
-    private lateinit var step4: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analyze)
 
-        progressBar = findViewById(R.id.progressBar)
-        progressText = findViewById(R.id.progressText)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val progressText = findViewById<TextView>(R.id.progressText)
+        val step2 = findViewById<TextView>(R.id.step2)
+        val step3 = findViewById<TextView>(R.id.step3)
+        val step4 = findViewById<TextView>(R.id.step4)
 
-        step1 = findViewById(R.id.step1)
-        step2 = findViewById(R.id.step2)
-        step3 = findViewById(R.id.step3)
-        step4 = findViewById(R.id.step4)
+        // Simulating AI analysis progress
+        Handler(Looper.getMainLooper()).postDelayed({
+            progressBar.progress = 50
+            progressText.text = "Progress 50%"
+            step2.text = "✓ Scanning Reviews"
+            step2.setTextColor(getColor(android.R.color.holo_green_dark))
+            step3.text = "▶ Detecting Patterns"
+            step3.setTextColor(getColor(android.R.color.black))
+        }, 1500)
 
-        startAnalysis()
-    }
+        Handler(Looper.getMainLooper()).postDelayed({
+            progressBar.progress = 75
+            progressText.text = "Progress 75%"
+            step3.text = "✓ Detecting Patterns"
+            step3.setTextColor(getColor(android.R.color.holo_green_dark))
+            step4.text = "▶ Calculating Trust Score"
+            step4.setTextColor(getColor(android.R.color.black))
+        }, 3000)
 
-    private fun startAnalysis() {
-        val handler = Handler(Looper.getMainLooper())
-
-        for (i in 0..100 step 5) {
-            handler.postDelayed({
-                progressBar.progress = i
-                progressText.text = "$i%"
-
-                when (i) {
-                    25 -> step2.text = "✔ Scanning Reviews"
-                    50 -> step3.text = "✔ Detecting Patterns"
-                    75 -> step4.text = "✔ Calculating Trust Score"
-                }
-
-                if (i == 100) {
-                    // TODO: Move to result screen
-                }
-
-            }, (i * 100).toLong())
-        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            progressBar.progress = 100
+            progressText.text = "Analysis Complete"
+            step4.text = "✓ Calculating Trust Score"
+            step4.setTextColor(getColor(android.R.color.holo_green_dark))
+            
+            // Future: Show result screen or dialog
+        }, 4500)
     }
 }

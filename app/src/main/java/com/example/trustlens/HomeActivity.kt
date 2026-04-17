@@ -2,9 +2,14 @@ package com.example.trustlens
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.imageview.ShapeableImageView
 
 class HomeActivity : AppCompatActivity() {
 
@@ -17,8 +22,15 @@ class HomeActivity : AppCompatActivity() {
         // Get role passed from LoginActivity or SignupActivity
         role = intent.getStringExtra("ROLE") ?: "USER"
 
+        setupHeader()
+        setupCategories()
+        setupProducts()
+        setupOtherFeatures()
+    }
+
+    private fun setupHeader() {
         // Profile icon → UserDashboard or SellerDashboard
-        val profileIcon = findViewById<ImageView>(R.id.profileButton)
+        val profileIcon = findViewById<ShapeableImageView>(R.id.profileButton)
         profileIcon.setOnClickListener {
             if (role == "USER") {
                 startActivity(Intent(this, UserDashboardActivity::class.java))
@@ -28,68 +40,79 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Settings icon → SettingsActivity
-        val settingsIcon = findViewById<ImageView>(R.id.btnSettings)
+        val settingsIcon = findViewById<ImageButton>(R.id.btnSettings)
         settingsIcon.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
+    }
 
-        // Category clicks → CategoryActivity (reuse one activity, pass category name)
-        val womenCategory = findViewById<TextView>(R.id.catWomen)
-        womenCategory.setOnClickListener {
-            val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra("CATEGORY", "WOMEN")
-            startActivity(intent)
+    private fun setupCategories() {
+        // Category clicks
+        findViewById<Button>(R.id.catWomen).setOnClickListener { openCategory("Women Clothes") }
+        findViewById<Button>(R.id.catMen).setOnClickListener { openCategory("Men Clothes") }
+        findViewById<Button>(R.id.catKids).setOnClickListener { openCategory("Kids Clothes") }
+        findViewById<Button>(R.id.catAccessories).setOnClickListener { openCategory("Accessories") }
+        findViewById<Button>(R.id.catCrochet).setOnClickListener { openCategory("Crochet") }
+        findViewById<Button>(R.id.catDecor).setOnClickListener { openCategory("Decor Items") }
+    }
+
+    private fun openCategory(name: String) {
+        val intent = Intent(this, CategoryActivity::class.java)
+        intent.putExtra("CATEGORY_NAME", name)
+        startActivity(intent)
+    }
+
+    private fun setupProducts() {
+        // Product 1
+        findViewById<LinearLayout>(R.id.productCard1).setOnClickListener {
+            openProductDetail("Premium Jacket", "700/-", "@fashion_store")
         }
-
-        val menCategory = findViewById<TextView>(R.id.catMen)
-        menCategory.setOnClickListener {
-            val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra("CATEGORY", "MEN")
-            startActivity(intent)
+        // Product 2
+        findViewById<LinearLayout>(R.id.productCard2).setOnClickListener {
+            openProductDetail("Skincare Set", "1000/-", "@beauty_essentials")
         }
-
-        val kidsCategory = findViewById<TextView>(R.id.catKids)
-        kidsCategory.setOnClickListener {
-            val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra("CATEGORY", "KIDS")
-            startActivity(intent)
+        // Product 3
+        findViewById<LinearLayout>(R.id.productCard3).setOnClickListener {
+            openProductDetail("Running Shoes", "800/-", "@sneaker_hub")
         }
-
-        // Example product clicks → ProductDetailActivity (reuse one product screen)
-        val product1 = findViewById<TextView>(R.id.productName1)
-        product1.setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("PRODUCT_NAME", "Premium Jacket")
-            intent.putExtra("PRODUCT_PRICE", "700/-")
-            intent.putExtra("PRODUCT_SELLER", "@fashion_store")
-            startActivity(intent)
+        // Product 4
+        findViewById<LinearLayout>(R.id.productCard4).setOnClickListener {
+            openProductDetail("Smart Watch", "1500/-", "@tech_deals")
         }
-
-        val product2 = findViewById<TextView>(R.id.productName2)
-        product2.setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("PRODUCT_NAME", "Skincare Set")
-            intent.putExtra("PRODUCT_PRICE", "1000/-")
-            intent.putExtra("PRODUCT_SELLER", "@beauty_essentials")
-            startActivity(intent)
+        // Product 5
+        findViewById<LinearLayout>(R.id.productCard5).setOnClickListener {
+            openProductDetail("Casual Shirt", "435/-", "@fashion_store")
         }
-
-        val product3 = findViewById<TextView>(R.id.productna3)
-        product3.setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("PRODUCT_NAME", "Running Shoes")
-            intent.putExtra("PRODUCT_PRICE", "800/-")
-            intent.putExtra("PRODUCT_SELLER", "@sneeker_hub")
-            startActivity(intent)
+        // Product 6
+        findViewById<LinearLayout>(R.id.productCard6).setOnClickListener {
+            openProductDetail("Perfume", "234/-", "@beauty_essentials")
         }
+        // Product 7
+        findViewById<LinearLayout>(R.id.productCard7).setOnClickListener {
+            openProductDetail("Headphones", "2530/-", "@tech_deals")
+        }
+        // Product 8
+        findViewById<LinearLayout>(R.id.productCard8).setOnClickListener {
+            openProductDetail("Sneakers", "950/-", "@sneaker_hub")
+        }
+    }
 
-        val product4 = findViewById<TextView>(R.id.product4)
-        product4.setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("PRODUCT_NAME", "Smart Watch")
-            intent.putExtra("PRODUCT_PRICE", "900/-")
-            intent.putExtra("PRODUCT_SELLER", "@tech_deals")
-            startActivity(intent)
+    private fun openProductDetail(name: String, price: String, seller: String) {
+        val intent = Intent(this, ProductDetailActivity::class.java)
+        intent.putExtra("PRODUCT_NAME", name)
+        intent.putExtra("PRODUCT_PRICE", price)
+        intent.putExtra("PRODUCT_SELLER", seller)
+        startActivity(intent)
+    }
+
+    private fun setupOtherFeatures() {
+        // Search bar
+        val searchBar = findViewById<EditText>(R.id.searchBar)
+        
+        // Scam Card
+        findViewById<LinearLayout>(R.id.scamCard).setOnClickListener {
+            // Future: Open Scam Protection Info or AI Analysis
+            startActivity(Intent(this, AnalyzeActivity::class.java))
         }
     }
 }

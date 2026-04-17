@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trustlens.R
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.emailInput)
         val etPassword = findViewById<EditText>(R.id.passwordInput)
         val btnLogin = findViewById<Button>(R.id.loginButton)
-        val btnSignup = findViewById<Button>(R.id.signupTab)
+        val btnSignup = findViewById<TextView>(R.id.signupTab)
 
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString()
