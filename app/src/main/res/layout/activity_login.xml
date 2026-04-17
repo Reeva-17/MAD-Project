@@ -173,9 +173,12 @@
         android:layout_marginTop="16dp" />
 
     <TextView
+        android:id="@+id/backToRoleSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="← Back to role selection"
         android:textColor="#FFA500"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true" />
 </LinearLayout>

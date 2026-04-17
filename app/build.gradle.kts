@@ -1,7 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.gms.google-services")
+    alias(libs.plugins.android.application)
 }
 
 android {
@@ -41,6 +40,10 @@ android {
 dependencies {
     // Core AndroidX
     implementation(libs.core.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.cardview)
     implementation(libs.lifecycle.runtime)
 
     // Unit testing

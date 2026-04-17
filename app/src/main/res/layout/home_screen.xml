@@ -274,7 +274,7 @@
                         android:id="@+id/productSeller1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@fashion_store"
+                        android:text="\u0040fashion_store"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -346,7 +346,7 @@
                         android:id="@+id/productSeller2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@beauty_essentials"
+                        android:text="\u0040beauty_essentials"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -425,7 +425,7 @@
                         android:id="@+id/productSeller3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@sneaker_hub"
+                        android:text="\u0040sneaker_hub"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -497,7 +497,7 @@
                         android:id="@+id/productSeller4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@tech_deals"
+                        android:text="\u0040tech_deals"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -571,7 +571,7 @@
                         android:id="@+id/productSeller5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@fashion_store"
+                        android:text="\u0040fashion_store"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -637,7 +637,7 @@
                         android:id="@+id/productSeller6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@beauty_essentials"
+                        android:text="\u0040beauty_essentials"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -708,7 +708,7 @@
                         android:id="@+id/productSeller7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@tech_deals"
+                        android:text="\u0040tech_deals"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 
@@ -774,7 +774,7 @@
                         android:id="@+id/productSeller8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@sneaker_hub"
+                        android:text="\u0040sneaker_hub"
                         android:textSize="12sp"
                         android:textColor="#666666"/>
 

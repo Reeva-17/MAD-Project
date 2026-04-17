@@ -103,7 +103,7 @@
                     android:id="@+id/tv_store_handle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/@fashion_store"
+                    android:text="\u0040fashion_store"
                     android:textColor="@color/white_80"
                     android:textSize="14sp"
 

@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.TrustLens" parent="Theme.AppCompat.Light.NoActionBar" />
-=======
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MADFIREBASE" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.TrustLens" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/pink</item>
     </style>
-
-    <style name="Theme.MADFIREBASE" parent="Base.Theme.MADFIREBASE" />
->>>>>>> 93ce4a9f96e3ce03963d9c7897397882f106caa0
 </resources>

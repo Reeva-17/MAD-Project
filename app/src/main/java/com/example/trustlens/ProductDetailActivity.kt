@@ -2,7 +2,6 @@ package com.example.trustlens
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +19,15 @@ class ProductDetailActivity : AppCompatActivity() {
         val tvPrice = findViewById<TextView>(R.id.tv_product_detail_price)
         val tvSeller = findViewById<TextView>(R.id.tv_product_detail_seller)
         val btnBuyNow = findViewById<Button>(R.id.btn_buy_now)
+        val btnBack = findViewById<android.widget.ImageButton>(R.id.btn_back_detail)
 
         tvName.text = name
         tvPrice.text = price
         tvSeller.text = "Seller: $seller"
+
+        btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
         btnBuyNow.setOnClickListener {
             Toast.makeText(this, "Buying $name...", Toast.LENGTH_SHORT).show()

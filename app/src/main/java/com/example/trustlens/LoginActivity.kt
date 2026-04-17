@@ -44,6 +44,10 @@ class LoginActivity : AppCompatActivity() {
             intent.putExtra("ROLE", role)
             startActivity(intent)
         }
+
+        findViewById<TextView>(R.id.backToRoleSelection).setOnClickListener {
+            finish()
+        }
     }
 
     private fun isValidEmail(email: String): Boolean {
