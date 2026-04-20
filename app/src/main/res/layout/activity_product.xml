@@ -29,6 +29,7 @@
                 android:translationZ="10dp"
                 android:padding="20dp">
                 <ImageView
+                    android:id="@+id/btnBackProduct"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@android:drawable/ic_menu_revert"
@@ -182,6 +183,7 @@
                                 android:text="127 reviews"
                                 android:textColor="@color/gray_text"/>
                             <Button
+                                android:id="@+id/btnViewFullAnalysis"
                                 android:layout_width="match_parent"
                                 android:layout_height="45dp"
                                 android:layout_marginTop="10dp"

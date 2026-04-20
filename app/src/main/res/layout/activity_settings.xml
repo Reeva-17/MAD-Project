@@ -22,7 +22,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/back"
+            android:src="@drawable/ic_arrow_left"
             android:contentDescription="Back"
             app:tint="#FFFFFF"
             />

@@ -7,4 +7,13 @@
     <dimen name="text_small">12sp</dimen>
     <dimen name="text_medium">14sp</dimen>
     <dimen name="text_large">18sp</dimen>
+    <dimen name="text_h1">32sp</dimen>
+    <dimen name="text_h2">24sp</dimen>
+    <dimen name="text_h3">20sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="elevation_card">4dp</dimen>
+    <dimen name="rank_badge_size">32dp</dimen>
+    <dimen name="product_thumb_size">64dp</dimen>
+    <dimen name="progress_bar_height">8dp</dimen>
+    <dimen name="spacing_xl">48dp</dimen>
 </resources>

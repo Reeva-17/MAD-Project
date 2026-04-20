@@ -7,6 +7,7 @@
     <string name="trustcheck">TrustCheck</string>
     <string name="performance_metrics">Performance Metrics</string>
     <string name="top_products">Top Products</string>
+    <string name="analyzing_business">Analyzing %1$s...</string>
 
     <!-- Strings from remote -->
     <string name="fashion_store">@fashion_store</string>

@@ -32,12 +32,15 @@
 
         <!-- PRODUCT 1: Running Shoes -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/purchasedCard1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="8dp"
-            app:cardMaxElevation="12dp">
+            app:cardMaxElevation="12dp"
+            android:clickable="true"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:id="@+id/runningshoes"
+                        android:id="@+id/imgProduct1"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:scaleType="centerCrop"
@@ -59,7 +62,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/runningshoes"
+                        android:layout_toEndOf="@id/imgProduct1"
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
                         <TextView
@@ -102,16 +105,17 @@
 
                 <RatingBar
                     android:id="@+id/rating1"
-                    style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:numStars="5"
                     android:progressTint="#FFD700"
                     android:rating="0"
-                    android:stepSize="1" />
+                    android:stepSize="1"
+                    android:isIndicator="false" />
 
                 <EditText
+                    android:id="@+id/etReview1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Share your experience..."
@@ -127,6 +131,7 @@
                     android:layout_marginTop="16dp">
 
                     <Button
+                        android:id="@+id/btnSubmit1"
                         android:layout_width="wrap_content"
                         android:layout_height="38dp"
                         android:backgroundTint="#6200EE"
@@ -136,6 +141,7 @@
                         app:cornerRadius="20dp" />
 
                     <TextView
+                        android:id="@+id/btnReportItem1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -150,11 +156,14 @@
 
         <!-- PRODUCT 2: Smart Watch -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/purchasedCard2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="24dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:clickable="true"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +176,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:id="@+id/smartwatch"
+                        android:id="@+id/imgProduct2"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:scaleType="centerCrop"
@@ -175,7 +184,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/smartwatch"
+                        android:layout_toEndOf="@id/imgProduct2"
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
                         <TextView
@@ -216,15 +225,18 @@
                     android:textColor="#6200EE"/>
 
                 <RatingBar
-                    style="?android:attr/ratingBarStyleSmall"
+                    android:id="@+id/rating2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:numStars="5"
                     android:progressTint="#FFD700"
-                    android:rating="0" />
+                    android:rating="0"
+                    android:stepSize="1"
+                    android:isIndicator="false" />
 
                 <EditText
+                    android:id="@+id/etReview2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Rate the watch performance..."
@@ -238,6 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp">
                     <Button
+                        android:id="@+id/btnSubmit2"
                         android:layout_width="wrap_content"
                         android:layout_height="38dp"
                         android:backgroundTint="#6200EE"
@@ -246,6 +259,7 @@
                         android:textSize="12sp"
                         app:cornerRadius="20dp" />
                     <TextView
+                        android:id="@+id/btnReportItem2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -260,11 +274,14 @@
 
         <!-- PRODUCT 3: Premium Jacket -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/purchasedCard3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="24dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:clickable="true"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -277,7 +294,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:id="@+id/oip"
+                        android:id="@+id/imgProduct3"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:scaleType="centerCrop"
@@ -285,7 +302,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/oip"
+                        android:layout_toEndOf="@id/imgProduct3"
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
                         <TextView
@@ -326,15 +343,18 @@
                     android:textColor="#6200EE"/>
 
                 <RatingBar
-                    style="?android:attr/ratingBarStyleSmall"
+                    android:id="@+id/rating3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:numStars="5"
                     android:progressTint="#FFD700"
-                    android:rating="0" />
+                    android:rating="0"
+                    android:stepSize="1"
+                    android:isIndicator="false" />
 
                 <EditText
+                    android:id="@+id/etReview3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Review quality of material..."
@@ -348,6 +368,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp">
                     <Button
+                        android:id="@+id/btnSubmit3"
                         android:layout_width="wrap_content"
                         android:layout_height="38dp"
                         android:backgroundTint="#6200EE"
@@ -356,6 +377,7 @@
                         android:textSize="12sp"
                         app:cornerRadius="20dp" />
                     <TextView
+                        android:id="@+id/btnReportItem3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

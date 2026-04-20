@@ -1,7 +1,14 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-    <gradient android:angle="135" android:startColor="#F26A30" android:centerColor="#984FD8" android:endColor="#E83EBF" android:type="linear"/>
-    <corners android:bottomleftRadius="24dp" android:bottomRightRadius="24dp" android:topLeftRadius= "0dp" android:topRightRadius="0dp"/>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:startColor="#F26A30"
+        android:centerColor="#984FD8"
+        android:endColor="#E83EBF"
+        android:type="linear" />
+    <corners
+        android:bottomLeftRadius="24dp"
+        android:bottomRightRadius="24dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
 </shape>
-
-
-

@@ -17,10 +17,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
             <ImageView
+                android:id="@+id/backButtonReport"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_revert"
-                app:tint="@color/black" />
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/black"
+                android:clickable="true"
+                android:focusable="true"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

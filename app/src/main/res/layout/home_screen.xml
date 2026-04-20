@@ -84,7 +84,9 @@
             android:hint="Search Instagram business or product..."
             android:background="@android:color/transparent"
             android:padding="12dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
     </LinearLayout>
 
     <!-- Scam Protection Card -->

@@ -1,4 +1,4 @@
-package com.example.trustlens  // <-- apna package name yahan likhna
+package com.example.trustlens
 
 import android.os.Bundle
 import android.widget.LinearLayout

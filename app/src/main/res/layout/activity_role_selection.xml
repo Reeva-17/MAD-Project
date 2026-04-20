@@ -96,7 +96,7 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/sellerOption"
+            android:src="@drawable/seller_option"
             android:contentDescription="Seller Icon"
             android:layout_marginEnd="12dp" />
 

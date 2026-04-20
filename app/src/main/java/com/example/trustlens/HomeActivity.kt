@@ -2,6 +2,7 @@ package com.example.trustlens
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -33,7 +34,8 @@ class HomeActivity : AppCompatActivity() {
         val profileIcon = findViewById<ShapeableImageView>(R.id.profileButton)
         profileIcon.setOnClickListener {
             if (role == "USER") {
-                startActivity(Intent(this, UserDashboardActivity::class.java))
+                val intent = Intent(this, UserDashboardActivity::class.java)
+                startActivity(intent)
             } else {
                 startActivity(Intent(this, SellerDashboardActivity::class.java))
             }
@@ -98,7 +100,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun openProductDetail(name: String, price: String, seller: String) {
-        val intent = Intent(this, ProductDetailActivity::class.java)
+        val intent = Intent(this, ProductActivity::class.java)
         intent.putExtra("PRODUCT_NAME", name)
         intent.putExtra("PRODUCT_PRICE", price)
         intent.putExtra("PRODUCT_SELLER", seller)
@@ -108,10 +110,22 @@ class HomeActivity : AppCompatActivity() {
     private fun setupOtherFeatures() {
         // Search bar
         val searchBar = findViewById<EditText>(R.id.searchBar)
+        searchBar.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
+                val query = searchBar.text.toString().trim()
+                if (query.isNotEmpty()) {
+                    val intent = Intent(this, AnalyzeActivity::class.java)
+                    intent.putExtra("SEARCH_QUERY", query)
+                    startActivity(intent)
+                }
+                true
+            } else {
+                false
+            }
+        }
         
         // Scam Card
         findViewById<LinearLayout>(R.id.scamCard).setOnClickListener {
-            // Future: Open Scam Protection Info or AI Analysis
             startActivity(Intent(this, AnalyzeActivity::class.java))
         }
     }

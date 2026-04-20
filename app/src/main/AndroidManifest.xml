@@ -33,8 +33,10 @@
         <activity android:name=".SellerDashboardActivity" android:exported="false" />
         <activity android:name=".SettingsActivity" android:exported="false" />
         <activity android:name=".CategoryActivity" android:exported="false" />
+        <activity android:name=".ProductActivity" android:exported="false" />
         <activity android:name=".ProductDetailActivity" android:exported="false" />
         <activity android:name=".ViewStoreActivity" android:exported="false" />
+        <activity android:name=".PurchasedProductsActivity" android:exported="false" />
 
         <!-- Remote Activities -->
         <activity android:name=".MainActivity" android:exported="false" />

@@ -1,4 +1,4 @@
-package com.example.madfirebase
+package com.example.trustlens
 
 import android.os.Bundle
 import android.widget.Button
@@ -21,17 +21,15 @@ class MainActivity : AppCompatActivity() {
         val saveBtn = findViewById<Button>(R.id.saveBtn)
         resultText = findViewById(R.id.resultText)
 
-        val database = FirebaseDatabase.getInstance(
+        // 🔥 Firebase reference (clean way)
+        ref = FirebaseDatabase.getInstance(
             "https://mad-backend-79e1d-default-rtdb.asia-southeast1.firebasedatabase.app/"
-        )
+        ).getReference("users")
 
-        ref = database.getReference("users")
-
-        // 🔥 READ USERS
+        // 🔥 Read data
         getUsers()
 
-
-        // 🔥 SAVE USER
+        // 🔥 Save data
         saveBtn.setOnClickListener {
 
             val name = nameInput.text.toString().trim()
@@ -41,11 +39,17 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val userId = ref.push().key ?: return@setOnClickListener
+            val userId = ref.push().key
+
+            if (userId == null) {
+                Toast.makeText(this, "Error generating ID", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             ref.child(userId).setValue(name)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show()
+                    nameInput.text.clear()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
@@ -53,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 🔥 SHOW USERS ON SCREEN
+    // 🔥 Read users
     private fun getUsers() {
 
         ref.addValueEventListener(object : ValueEventListener {
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
                 for (data in snapshot.children) {
                     val value = data.getValue(String::class.java)
-                    if (value != null) {
+                    if (!value.isNullOrEmpty()) {
                         list.append(value).append("\n")
                     }
                 }

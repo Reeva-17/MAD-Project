@@ -274,7 +274,7 @@
                     android:id="@+id/iv_store_logo"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:src="@drawable/sellerOption"
+                    android:src="@drawable/seller_option"
                     android:scaleType="centerInside"
                     android:layout_marginEnd="8dp"/>
 
