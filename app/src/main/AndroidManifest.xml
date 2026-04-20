@@ -36,6 +36,13 @@
         <activity android:name=".ProductDetailActivity" android:exported="false" />
         <activity android:name=".ViewStoreActivity" android:exported="false" />
 
+        <!-- Remote Activities -->
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".TrustAnalysisActivity" android:exported="false" />
+        <activity android:name=".ReportIssueActivity" android:exported="false" />
+        <activity android:name=".ReportSuccessActivity" android:exported="false" />
+        <activity android:name=".RiskDetailsActivity" android:exported="false" />
+
     </application>
 
 </manifest>

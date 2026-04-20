@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.TrustLens" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/pink</item>
     </style>
+
+    <style name="Base.Theme.MADFIREBASE" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.MADFIREBASE" parent="Base.Theme.MADFIREBASE" />
 </resources>

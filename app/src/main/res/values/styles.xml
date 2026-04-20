@@ -5,4 +5,12 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <!-- Circular Avatar Style -->
+    <style name="CircleImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>
