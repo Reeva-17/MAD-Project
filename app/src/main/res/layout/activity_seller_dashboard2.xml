@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="#FDFDFD">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,9 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <!-- Hero Section -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -25,8 +23,6 @@
                 android:orientation="vertical"
                 android:padding="40dp">
 
-
-                <!-- Seller Dashboard Top Bar -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -34,876 +30,161 @@
                     android:gravity="center_vertical"
                     android:layout_marginBottom="16dp">
 
-                    <!-- Arrow button on left -->
                     <ImageButton
                         android:id="@+id/backButton"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@color/transparent"
-                        android:src="@drawable/back"
-                        android:contentDescription="back"
-                        app:tint="@color/white"
-                       />
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/white_circle"
+                        android:backgroundTint="#40FFFFFF"
+                        android:src="@drawable/ic_arrow_left"
+                        app:tint="@color/white" />
 
-                    <!-- Dashboard Title (center, expands with weight) -->
                     <TextView
-                        android:id="@+id/tv_dashboard_title"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/seller_dashboard"
+                        android:text="Seller Center"
                         android:textColor="@color/white"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:gravity="center"/>
 
-                    <!-- Settings button on right -->
                     <ImageButton
                         android:id="@+id/btn_settings_dashboard"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/settings_logo"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="Settings"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/white_circle"
+                        android:backgroundTint="#40FFFFFF"
+                        android:src="@drawable/ic_settings"
                         app:tint="@color/white"/>
                 </LinearLayout>
-                <!-- Store DP + Name side by side -->
+
+                <!-- Store Info with Verified Badge -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:layout_marginTop="16dp">
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        app:cardCornerRadius="32dp">
+                        <ImageView
+                            android:id="@+id/iv_store_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher_foreground"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
 
-                    <!-- Profile Image -->
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:contentDescription="image"
-                        android:src="@mipmap/ic_launcher_foreground"
-                        android:visibility="visible"/>
-
-                    <!-- Store Name -->
-
-                    <TextView
-                        android:id="@+id/tv_store_name"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  Fashion Store"
-                        android:textColor="@color/white"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center"/>
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <TextView
+                                android:id="@+id/tv_store_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fashion Store"
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_shield_check"
+                                app:tint="#4CAF50"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_store_handle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@fashion_store"
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
                 </LinearLayout>
-
-                <!-- Store Handle -->
-                <TextView
-                    android:id="@+id/tv_store_handle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="\u0040fashion_store"
-                    android:textColor="@color/white_80"
-                    android:textSize="14sp"
-
-                    android:layout_marginTop="6dp"/>
             </LinearLayout>
 
+            <!-- Main Stats Grid -->
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="2"
-                android:padding="@dimen/spacing_base"
-                android:columnOrderPreserved="false">
+                android:padding="16dp"
+                android:layout_marginTop="-40dp">
 
                 <!-- Total Products -->
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/bg_card_products"
-                    android:layout_margin="@dimen/spacing_sm"
-                    android:elevation="4dp">
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:text="156" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/black"/>
+                        <TextView android:text="Products" android:textSize="12sp" android:textColor="@color/gray_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/baseline_production_quantity_limits_24"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:text="156"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/foreground"
-                        android:layout_marginTop="@dimen/spacing_sm"/>
-
-                    <TextView
-                        android:text="Total Products"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/muted_foreground"/>
-                </LinearLayout>
-
-                <!-- Avg Trust Score -->
-                <LinearLayout
+                <!-- Trust Score -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="140dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/bg_insight_success"
-                    android:layout_margin="@dimen/spacing_sm"
-                    android:elevation="4dp">
-
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/baseline_insights_24"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:text="88"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/foreground"
-                        android:layout_marginTop="@dimen/spacing_sm"/>
-
-                    <TextView
-                        android:text="Avg Trust Score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/muted_foreground"/>
-                </LinearLayout>
-
-                <!-- Reviews Count -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/bg_info"
-                    android:layout_margin="@dimen/spacing_sm"
-                    android:elevation="4dp">
-
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/outline_award_star_24"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:text="892"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/foreground"
-                        android:layout_marginTop="@dimen/spacing_sm"/>
-
-                    <TextView
-                        android:text="Reviews Count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/muted_foreground"/>
-                </LinearLayout>
-
-                <!-- Risk Alerts -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/bg_insight_warning"
-                    android:layout_margin="@dimen/spacing_sm"
-                    android:elevation="4dp">
-
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/risk_24"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:text="3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/foreground"
-                        android:layout_marginTop="@dimen/spacing_sm"/>
-
-                    <TextView
-                        android:text="Risk Alerts"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/muted_foreground"/>
-                </LinearLayout>
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:text="92%" android:textSize="22sp" android:textStyle="bold" android:textColor="#4CAF50"/>
+                        <TextView android:text="Trust Score" android:textSize="12sp" android:textColor="@color/gray_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </GridLayout>
 
-            <!-- View Store Button -->
+            <!-- Action Buttons -->
             <LinearLayout
-                android:id="@+id/btn_view_store"
-                android:layout_width="150dp"
-                android:layout_height="48dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="8dp"
-                android:background="@drawable/bg_gradient"
-                android:layout_margin="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:elevation="4dp">
-
-                <!-- Logo -->
-                <ImageView
-                    android:id="@+id/iv_store_logo"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/seller_option"
-                    android:scaleType="centerInside"
-                    android:layout_marginEnd="8dp"/>
-
-                <!-- Text -->
-
-                <TextView
-                    android:id="@+id/tv_view_store"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View Store"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-
-
-
-
-
-
-            <!-- Performance Metrics -->
-
-
-            <!-- Insights -->
-            <!-- Insights & Recommendations -->
-            <LinearLayout
-                android:id="@+id/layout_performance_metrics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_metric_card"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:padding="16dp">
-
-                <!-- Header Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:elevation="10dp">
-
-                    <!-- Logo -->
-
-                    <!-- Heading -->
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_marginEnd="8dp"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@mipmap/ic_launcher2_foreground" />
-
-                    <TextView
-                        android:id="@+id/tv_metrics_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Performance Metrics"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Metric Row Template -->
-                <!-- Response Rate -->
-                <!-- Response Rate Row -->
-                <!-- Response Rate Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
-
-                    <!-- Left side label -->
-                    <TextView
-                        android:id="@+id/tv_response_rate_label"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Response Rate"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
-
-                    <!-- Right side percentage -->
-                    <TextView
-                        android:id="@+id/tv_response_rate_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="92%"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tv_response_rate_outof"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="/ 100"
-                        android:textColor="#9E9E9E"
-                        android:textSize="14sp" />
-
-                    <!-- Right side /100 -->
-                </LinearLayout>
-
-                <!-- Progress Bar -->
-                <ProgressBar
-                    android:id="@+id/pb_response_rate"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:backgroundTint="@color/white_20"
-                    android:max="100"
-                    android:progress="92"
-                    android:progressTint="@color/green" />
-
-
-                <!-- Customer Satisfaction -->
-                <!-- Customer Satisfaction Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
-
-                    <!-- Left side label -->
-                    <TextView
-                        android:id="@+id/tv_customer_satisfaction_label"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Customer Satisfaction"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
-
-                    <!-- Right side percentage group -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_customer_satisfaction_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="88%"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_customer_satisfaction_outof"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="/ 100"
-                            android:textColor="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Progress Bar -->
-                <ProgressBar
-                    android:id="@+id/pb_customer_satisfaction"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:indeterminate="false"
-                    android:max="100"
-                    android:progress="88"
-                    android:progressBackgroundTint="#E0E0E0"
-                    android:progressTint="@color/blue" />
-
-
-                <!-- Delivery Time -->
-                <!-- Delivery Time Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
-
-                    <!-- Left side label -->
-                    <TextView
-                        android:id="@+id/tv_delivery_time_label"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Delivery Time"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
-
-                    <!-- Right side percentage group -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_delivery_time_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="85%"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_delivery_time_outof"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="/ 100"
-                            android:textColor="#9E9E9E"
-                            android:textSize="14sp" />
-
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Progress Bar -->
-                <ProgressBar
-                    android:id="@+id/pb_delivery_time"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:indeterminate="false"
-                    android:max="100"
-                    android:progress="85"
-                    android:progressBackgroundTint="#E0E0E0"
-                    android:progressTint="@color/orange" />
-
-
-                <!-- Product Quality -->
-                <!-- Product Quality Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
-
-                    <!-- Left side label -->
-                    <TextView
-                        android:id="@+id/tv_product_quality_label"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Product Quality"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp" />
-
-                    <!-- Right side percentage group -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tv_product_quality_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="91%"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_product_quality_outof"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="/ 100"
-                            android:textColor="#9E9E9E"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Progress Bar -->
-                <ProgressBar
-                    android:id="@+id/pb_product_quality"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:indeterminate="false"
-                    android:max="100"
-                    android:progress="91"
-                    android:progressBackgroundTint="#E0E0E0"
-                    android:progressTint="@color/purple" />
-
+                <Button
+                    android:id="@+id/btn_add_product"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/btn_gradient"
+                    android:text="+ Add Product"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btn_view_store"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_circle"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="View Store"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layout_insights"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginTop="16dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-
-                    <ImageView
-                        android:id="@+id/iv_insights_logo"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@mipmap/ic_bulb_foreground"
-                        android:scaleType="centerInside"
-                        android:layout_marginEnd="8dp"/>
-
-                    <TextView
-                        android:id="@+id/tv_insights_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Insights &amp; Recommendations"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"/>
-                </LinearLayout>
-
-                <!-- Orange Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/bg_card_products">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@mipmap/ic_hazard_foreground"
-
-                        android:layout_marginEnd="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Low engagement detected on 3 recent products\n→ Improve product descriptions"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
-
-                        android:textSize="14sp"/>
-                </LinearLayout>
-
-                <!-- Green Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/bg_insight_success">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@mipmap/ic_mark_foreground"
-
-                        android:layout_marginEnd="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Trust score increased by 5% this month\n→ Keep up the good work!"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
-                        android:textSize="14sp"/>
-                </LinearLayout>
-
-                <!-- Blue Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="12dp"
-                    android:background="@drawable/bg_info">
-
-                    <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="24dp"
-                        android:src="@mipmap/ic_return_icon_vector_foreground"
-                        android:layout_marginEnd="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Add return policy to increase trust by ~8%\n→ Update store policies"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
-
-                        android:textSize="14sp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <!-- Top Products -->
-            <!-- Top Products Section -->
-            <!-- Top Products Section -->
-            <LinearLayout
-                android:id="@+id/layout_top_products"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginTop="16dp"
-                android:elevation="4dp">
-
-                <!-- Heading -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-
-                    <ImageView
-                        android:id="@+id/iv_top_products_logo"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@mipmap/ic_star_foreground"
-                        android:scaleType="centerInside"
-                        android:layout_marginEnd="8dp"/>
-
-                    <TextView
-                        android:id="@+id/tv_top_products_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Top Products"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"/>
-                </LinearLayout>
-
-                <!-- Product Item Template -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="5dp">
-
-                    <!-- Product Image -->
-                    <ImageView
-                        android:id="@+id/iv_product1_image"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@mipmap/ic_jacket_foreground"
-                        android:scaleType="centerCrop"
-                        android:layout_marginEnd="8dp"/>
-
-                    <!-- Product Info (Name + Sales stacked vertically) -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_product1_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Premium Jacket"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:id="@+id/tv_product1_sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="124 sales"
-                            android:textColor="#9E9E9E"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-                    <!-- Rating on right side -->
-                    <TextView
-                        android:id="@+id/tv_product1_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="⭐ 4.8"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <!-- Repeat same structure for Designer Watch -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-
-                    <ImageView
-                        android:id="@+id/iv_product2_image"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@mipmap/ic_watch_foreground"
-                        android:scaleType="centerCrop"
-                        android:layout_marginEnd="8dp"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_product2_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Designer Watch"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:id="@+id/tv_product2_sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="98 sales"
-                            android:textColor="#9E9E9E"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_product2_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="⭐ 4.9"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <!-- Product 3: Running Shoes -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_product3_image"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@mipmap/ic_shoes_foreground"
-                        android:scaleType="centerCrop"
-                        android:layout_marginEnd="8dp"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_product3_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Running Shoes"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:id="@+id/tv_product3_sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="78 sales"
-                            android:textColor="#9E9E9E"
-                            android:textSize="12sp"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_product3_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="⭐ 4.6"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-
-
-            <!-- Footer -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="32dp"
-                android:paddingBottom="32dp">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/ic_shield_check"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/spacing_sm"
-                    android:text="@string/powered_by"
-                    android:textSize="@dimen/text_small"
-                    android:textColor="@color/muted_foreground"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/trustcheck"
-                    android:textSize="@dimen/text_small"
-                    android:textColor="@color/foreground"
-                    android:textStyle="bold"/>
-            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-

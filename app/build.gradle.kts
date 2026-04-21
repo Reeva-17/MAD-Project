@@ -56,4 +56,8 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
+    
+    // Google Auth
+    implementation(libs.google.auth)
 }

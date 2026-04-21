@@ -10,50 +10,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- 1. Header & Product Image (Image 1) -->
+        <!-- Header & Image -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="350dp">
-
             <ImageView
+                android:id="@+id/productImageDetail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/premiumshoes" /> <!-- Replace with your image -->
-
-            <!-- Navigation Icons -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="10dp"
-                android:translationZ="10dp"
-                android:padding="20dp">
-                <ImageView
-                    android:id="@+id/btnBackProduct"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@android:drawable/ic_menu_revert"
-                    app:tint="@color/black" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="15dp"
-                        android:src="@android:drawable/btn_star_big_off"
-                        app:tint="@color/black"/>
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@android:drawable/ic_menu_share"
-                        app:tint="@color/black"/>
-                </LinearLayout>
-            </RelativeLayout>
+                android:src="@drawable/premiumshoes" />
+            <ImageView
+                android:id="@+id/btnBackProduct"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/white_circle"
+                android:padding="8dp"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/black" />
         </RelativeLayout>
 
-        <!-- 2. Product Info (Image 2) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,41 +38,37 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/productNameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Premium Running Shoes"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/productPriceDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="$299"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <!-- Seller Info -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:gravity="center_vertical">
                 <androidx.cardview.widget.CardView
                     android:layout_width="45dp" android:layout_height="45dp"
-                    app:cardCornerRadius="22.5dp" app:cardElevation="0dp">
-                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/runningshoes"/>
+                    app:cardCornerRadius="22.5dp">
+                    <ImageView android:id="@+id/sellerImageDetail" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@mipmap/ic_launcher_foreground"/>
                 </androidx.cardview.widget.CardView>
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@sneaker_hub" android:textStyle="bold" android:textColor="@color/black"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="View seller profile" android:textColor="@color/gray_text" android:textSize="12sp"/>
+                    <TextView android:id="@+id/sellerHandleDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:textColor="@color/black"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Verified Seller" android:textColor="@color/gray_text" android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- 3. Trust Score Banner (Image 2) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,375 +76,89 @@
                 android:background="@drawable/trust_score_banner_bg"
                 android:orientation="vertical"
                 android:padding="20dp">
-
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Trust Score" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="88" android:textColor="@color/white" android:textSize="24sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/trustScoreValueDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:textColor="@color/white" android:textSize="24sp" android:textStyle="bold"/>
                 </RelativeLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/pill_bg_light"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="8dp"
-                    android:text="✓ This product appears safe based on AI analysis"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- 1. RATINGS & REVIEWS SECTION (Image 1) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="AI Analysis Summary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Bar 1: Seller Authenticity -->
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:id="@+id/label1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✅ Seller Authenticity" android:textColor="@color/black" android:textStyle="bold" />
+                        <TextView android:id="@+id/authScoreText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="0%" android:textColor="#00C853" android:textStyle="bold" />
+                        <ProgressBar android:id="@+id/authProgressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_below="@id/label1" android:layout_marginTop="10dp" android:progressDrawable="@drawable/custom_progress_bar" />
+                    </RelativeLayout>
+
+                    <!-- Bar 2: Engagement Quality -->
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+                        <TextView android:id="@+id/label2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📈 Engagement Quality" android:textColor="@color/black" android:textStyle="bold" />
+                        <TextView android:id="@+id/engScoreText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="0%" android:textColor="#00C853" android:textStyle="bold" />
+                        <ProgressBar android:id="@+id/engProgressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_below="@id/label2" android:layout_marginTop="10dp" android:progressDrawable="@drawable/custom_progress_bar" />
+                    </RelativeLayout>
+
+                    <!-- Bar 3: Review Reliability -->
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+                        <TextView android:id="@+id/label3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐ Review Reliability" android:textColor="@color/black" android:textStyle="bold" />
+                        <TextView android:id="@+id/relScoreText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="0%" android:textColor="#00C853" android:textStyle="bold" />
+                        <ProgressBar android:id="@+id/relProgressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_below="@id/label3" android:layout_marginTop="10dp" android:progressDrawable="@drawable/custom_progress_bar" />
+                    </RelativeLayout>
+
+                    <!-- Bar 4: Complaint Frequency -->
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+                        <TextView android:id="@+id/label4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️ Complaint Frequency" android:textColor="@color/black" android:textStyle="bold" />
+                        <TextView android:id="@+id/compScoreText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="0%" android:textColor="#00C853" android:textStyle="bold" />
+                        <ProgressBar android:id="@+id/compProgressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_below="@id/label4" android:layout_marginTop="10dp" android:progressDrawable="@drawable/custom_progress_bar" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="💬 Reviews &amp; Feedback"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
             <LinearLayout
+                android:id="@+id/feedbackContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_marginTop="10dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⭐ Ratings &amp; Reviews"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="20dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <!-- Left: Rating -->
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4.5"
-                                android:textSize="40sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="⭐⭐⭐⭐☆"
-                                android:textSize="16sp"/>
-                        </LinearLayout>
-
-                        <View android:layout_width="1dp" android:layout_height="60dp" android:background="#EEEEEE" android:layout_marginHorizontal="20dp"/>
-
-                        <!-- Right: Review Count & Button -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="127 reviews"
-                                android:textColor="@color/gray_text"/>
-                            <Button
-                                android:id="@+id/btnViewFullAnalysis"
-                                android:layout_width="match_parent"
-                                android:layout_height="45dp"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/orange_gradient_btn"
-                                android:text="View Full Analysis"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- AI Analysis Summary Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="📊 AI Analysis Summary"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <!-- Main Card Box -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp"
-                    app:cardBackgroundColor="@color/white">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-
-                        <!-- 1. Seller Authenticity -->
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <TextView
-                                android:id="@+id/label1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="✅ Seller Authenticity"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:textSize="14sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="92%"
-                                android:textColor="#00C853"
-                                android:textStyle="bold" />
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="6dp"
-                                android:layout_below="@id/label1"
-                                android:layout_marginTop="10dp"
-                                android:progress="92"
-                                android:progressDrawable="@drawable/custom_progress_bar" />
-                        </RelativeLayout>
-
-                        <!-- 2. Engagement Quality -->
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
-                            <TextView
-                                android:id="@+id/label2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="📈 Engagement Quality"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:textSize="14sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="85%"
-                                android:textColor="#00C853"
-                                android:textStyle="bold" />
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="6dp"
-                                android:layout_below="@id/label2"
-                                android:layout_marginTop="10dp"
-                                android:progress="85"
-                                android:progressDrawable="@drawable/custom_progress_bar" />
-                        </RelativeLayout>
-
-                        <!-- 3. Review Reliability -->
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
-                            <TextView
-                                android:id="@+id/label3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="⭐ Review Reliability"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:textSize="14sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="88%"
-                                android:textColor="#00C853"
-                                android:textStyle="bold" />
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="6dp"
-                                android:layout_below="@id/label3"
-                                android:layout_marginTop="10dp"
-                                android:progress="88"
-                                android:progressDrawable="@drawable/custom_progress_bar" />
-                        </RelativeLayout>
-
-                        <!-- 4. Complaint Frequency -->
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
-                            <TextView
-                                android:id="@+id/label4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="⚠️ Complaint Frequency"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:textSize="14sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:text="90%"
-                                android:textColor="#00C853"
-                                android:textStyle="bold" />
-                            <ProgressBar
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="6dp"
-                                android:layout_below="@id/label4"
-                                android:layout_marginTop="10dp"
-                                android:progress="90"
-                                android:progressDrawable="@drawable/custom_progress_bar" />
-                        </RelativeLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- 3. FEEDBACK PANEL (Image 2) -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="💬 Feedback Panel"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <!-- Review Card Example -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile1"
-                                android:layout_width="40dp" android:layout_height="40dp"
-                                app:cardCornerRadius="20dp" app:cardElevation="0dp">
-                                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/profile1" android:background="#FFCDD2"/>
-                            </androidx.cardview.widget.CardView>
-                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/profile1" android:layout_marginStart="10dp" android:orientation="vertical">
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sarah M." android:textStyle="bold" android:textColor="@color/black"/>
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐⭐⭐⭐⭐" android:textSize="12sp"/>
-                            </LinearLayout>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="2 days ago" android:textSize="12sp" android:textColor="@color/gray_text"/>
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Great quality! Fast shipping and authentic product."
-                            android:textColor="@color/black"/>
-
-                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👍 24"/>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:text="👎"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Review Card Example -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile1"
-                                android:layout_width="40dp" android:layout_height="40dp"
-                                app:cardCornerRadius="20dp" app:cardElevation="0dp">
-                                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/profile1" android:background="#FFCDD2"/>
-                            </androidx.cardview.widget.CardView>
-                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/profile1" android:layout_marginStart="10dp" android:orientation="vertical">
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="John D." android:textStyle="bold" android:textColor="@color/black"/>
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐⭐⭐⭐" android:textSize="12sp"/>
-                            </LinearLayout>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="1 week ago" android:textSize="12sp" android:textColor="@color/gray_text"/>
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Good value for money. Seller was responsive."
-                            android:textColor="@color/black"/>
-
-                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👍 18"/>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:text="👎"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Review Card Example -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile1"
-                                android:layout_width="40dp" android:layout_height="40dp"
-                                app:cardCornerRadius="20dp" app:cardElevation="0dp">
-                                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/profile1" android:background="#FFCDD2"/>
-                            </androidx.cardview.widget.CardView>
-                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/profile1" android:layout_marginStart="10dp" android:orientation="vertical">
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emily R." android:textStyle="bold" android:textColor="@color/black"/>
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐⭐⭐⭐⭐" android:textSize="12sp"/>
-                            </LinearLayout>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="2 weeks ago" android:textSize="12sp" android:textColor="@color/gray_text"/>
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Exceeded expectations!! Highly recommend this seller."
-                            android:textColor="@color/black"/>
-
-                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👍 31"/>
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:text="👎"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-
-            </LinearLayout>
-
+            <Button
+                android:id="@+id/btnViewFullAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/orange_gradient_btn"
+                android:text="Write a Review"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

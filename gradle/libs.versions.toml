@@ -1,5 +1,5 @@
 [versions]
-agp = "9.1.0"
+agp = "9.0.0"
 kotlin = "2.2.10"
 coreKtx = "1.18.0"
 appcompat = "1.7.0"
@@ -10,6 +10,7 @@ junit = "4.13.2"
 lifecycleVersion = "2.8.0"
 espressoCore = "3.7.0"
 firebaseBom = "33.1.0"
+googlePlayServicesAuth = "21.2.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -22,6 +23,8 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database-ktx" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+google-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "googlePlayServicesAuth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

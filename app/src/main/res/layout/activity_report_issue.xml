@@ -34,7 +34,7 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        <!-- Hero Section (Image 1) -->
+        <!-- Hero Section -->
         <View
             android:layout_width="match_parent"
             android:layout_height="140dp"
@@ -59,7 +59,7 @@
             android:textColor="@color/white"
             android:textSize="15sp" />
 
-        <!-- Input Section (Image 1) -->
+        <!-- Input Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,6 +69,7 @@
             android:textColor="@color/black"/>
 
         <EditText
+            android:id="@+id/handleInput"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
@@ -77,7 +78,7 @@
             android:padding="15dp"
             android:textSize="14sp"/>
 
-        <!-- Select Issue Section (Image 1 & 2) -->
+        <!-- Select Issue Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,8 +87,8 @@
             android:textStyle="bold"
             android:textColor="@color/black"/>
 
-        <!-- Scam Card -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardScam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -106,8 +107,8 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Fake Product Card -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardFakeProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -126,8 +127,8 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Payment Fraud -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardPaymentFraud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -146,8 +147,8 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Harassment Card -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardHarassment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -158,37 +159,16 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:gravity="center_vertical">
-
-                <!-- Harassment Symbol -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="😡"
-                    android:textSize="22sp"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="15dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Harassment"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Inappropriate behavior"
-                        android:textSize="12sp"
-                        android:textColor="@color/gray_text"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😡" android:textSize="22sp"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="15dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Harassment" android:textStyle="bold" android:textColor="@color/black"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Inappropriate behavior" android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- other -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardOther"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -207,7 +187,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Additional Details (Image 3) -->
+        <!-- Additional Details -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -217,6 +197,7 @@
             android:textColor="@color/black"/>
 
         <EditText
+            android:id="@+id/detailsInput"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginTop="10dp"
@@ -225,41 +206,6 @@
             android:gravity="top"
             android:padding="15dp"
             android:textSize="14sp"/>
-
-        <!-- Upload Screenshot (Image 3) -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="Upload Screenshot (Optional)"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/dashed_border"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/stat_sys_upload"
-                app:tint="@color/gray_text" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Click to upload"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PNG, JPG up to 10MB"
-                android:textSize="12sp"/>
-        </LinearLayout>
 
         <!-- Submit Button -->
         <Button

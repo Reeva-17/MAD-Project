@@ -13,4 +13,7 @@
     <string name="fashion_store">@fashion_store</string>
     <string name="tech_deals">@tech_deals</string>
     <string name="sneaker_hub">@sneaker_hub</string>
+
+    <!-- Replace with your actual Web Client ID from Firebase Console if needed -->
+    <string name="default_web_client_id">434304038243-70j6e17g795m689408r1r1h57f896o4q.apps.googleusercontent.com</string>
 </resources>

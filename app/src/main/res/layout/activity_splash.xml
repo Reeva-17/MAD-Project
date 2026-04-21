@@ -7,18 +7,27 @@
 
     <ImageView
         android:id="@+id/splashLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/trustlens_logo"
-        android:contentDescription="App Logo" />
+        android:contentDescription="TrustLens Logo" />
 
     <TextView
         android:id="@+id/splashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TrustLens"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Protecting you from scams with AI"
+        android:textColor="#E0E0E0"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
 </LinearLayout>

@@ -29,6 +29,7 @@
         <activity android:name=".RoleSelectionActivity" android:exported="false" />
         <activity android:name=".HomeActivity" android:exported="false" />
         <activity android:name=".AnalyzeActivity" android:exported="false" />
+        <activity android:name=".AddProductActivity" android:exported="false" />
         <activity android:name=".UserDashboardActivity" android:exported="false" />
         <activity android:name=".SellerDashboardActivity" android:exported="false" />
         <activity android:name=".SettingsActivity" android:exported="false" />
